@@ -1,42 +1,122 @@
 #include<stdio.h>
-#include<string.h>
-//结构体
-//对于一些复杂对象--结构体来描述--自己创造出来的一种类型
-struct Book
+//1、
+//int main()
+//{
+//	printf("zheng yunhai\n");
+//
+//	printf("zheng\nyunhai\n");
+//
+//	printf("zheng");
+//	printf("yunhai\n");
+//	return 0;
+//}
+
+//2、
+//int main()
+//{
+//	printf("郑云海，福建省铜盘校区");
+//	return 0;
+//}
+
+
+//3、
+//int main()
+//{
+//	int a = 18;
+//	int b = a * 365;
+//	printf("年龄：%d 天数： %d\n", a, b);
+//	return 0;
+//}
+
+//4、
+//
+//void jolly(void)
+//{
+//	printf("For he's a jolly good fellow!\n");
+//}
+//
+//void dent(void)
+//{
+//	printf("Which nobody can dent!\n");
+//
+//}
+//
+//int main()
+//{
+//	jolly();
+//	jolly();
+//	jolly();
+//	dent();
+//	return 0;
+//}
+
+//5、*
+//int br(void)
+//{
+//	printf("Brazil,Russia");
+//	return 0;
+//}
+//int ic(void)
+//{
+//	printf("India,China\n");
+//	return 0;
+//}
+//int main()
+//{
+//	br(); printf(", ");
+//	ic();
+//	ic(); br();
+//
+//	return 0;
+//}
+
+//6、
+//int main()
+//{
+//	int tose = 10;
+//	int tose2 = tose * tose;
+//	int tose3 =2*tose;
+//	printf("tose:%d tose的平方：%d tose的两倍：%d",tose, tose2, tose3);
+//
+//	return 0;
+//}
+
+//7、
+//void a(void)
+//{
+//	printf("smile!");
+//	
+//}
+//int main()
+//{
+//	a(); a(); a();
+//	printf("\n");
+//	a(); a();
+//	printf("\n");
+//	a();
+//	return 0;
+//}
+
+//8、
+int two()
 {
-	char name[20];//C语言程序设计
-	short price;//55
-};
-int main()
+	printf("two\n");
+	return 0;
+}
+int one_three(void)
 {
-	//利用结构体类型，创建一个该类型的结构体变量
-	struct Book b1 = { "c语言程序设计",55 };
-	struct Book* pb = &b1;
-	//利用pb 打印出书名和价格
-	// .  结构体变量，成员
-	// -> 结构体指针->成员
-	printf("%d\n", pb->price);
-	printf("%s\n",(*pb).name);
-
-	printf("书名：%s\n", b1.name);
-	printf("价格：%d元\n", b1.price);
-	b1.price = 15;
-
-
-	strcpy_s(b1.name,"C++");//strcpy---string copy--字符串拷贝--库函数--要用头文件string.h
-	printf("修改后的价格：%d元\n", b1.price);
-	printf("修改后的书名：%s\n", b1.name);
+	printf("one\n");
+	two();
+	printf("three\n");
 	return 0;
 }
 
+int main()
+{
+	printf("starting now:\n");
+	one_three();
+	printf("done!\n");
 
-//int main()
-//{
-//	int a = 0;
-//	int* b = &a;//b是一个指针变量
-//	int c;
-//	c = *b;
-//	printf("%p\n", b);
-//	printf("%d\n", c);
-//	return 0;
-//}
+
+	return 0;
+}
