@@ -1,52 +1,109 @@
 #include<stdio.h>
+#include<math.h>
+//输出素数
 
 int main()
 {
-	int i, k;
-	for (i = 0, k = 0; k = 0; i++, k++)//中间判断 k为假，所以循环结束，一共进行0次循环
-		k++;
+	int i = 0;
+	int sum = 0;
+	for (i = 100; i <= 200; i++)
+	{
+		//判断i是否为素数
+		//素数判断的规则
+		//1.试除法 
+		//产生2->i-1的数字
+		int j = 0;
+		for (j = 2; j <=sqrt(i); j++)// i=a*b  a和b中至少有一个数字<=开平方i
+			                         //sqrt() --开平方的数学库函数
+		{
+			if (i % j == 0)
+			{
+				break;
+			}
+		}
+		if (j >sqrt(i))
+		{
+			sum++;
+			printf("%d ", i);
+		}
+	}
+	printf("\nsum=%d\n", sum);
 	return 0;
 }
 
-//int main()
-//{
-//	int x, y;
-//	for (x = 0, y = 0; x < 2 && y < 5; ++x, y++)//&&表示并且，++x与x++效果相同
-//	{
-//		printf("hehe\n");
-//	}
-//	return 0;
-//}
 
 //int main()
 //{
-//	int i = 0, j = 0;
-//	for (; i < 10; i++)
+//	int i = 0;
+//	int sum = 0;
+//	for (i = 100; i <= 200; i++)
 //	{
-//		for (; j < 10; j++)
+//		//判断i是否为素数
+//		//素数判断的规则
+//		//1.试除法
+//		//产生2->i-1的数字
+//		int j = 0;
+//		for (j = 2; j < i; j++)
 //		{
-//			printf("hehe\n");//此时只会打印10个呵呵，因为此时的j并未初始化，所以当i=0时，程序往下走
-//			                 //此时打印10个hehe，并且此时j=10；当i=1在往下时，因为j没有初始化，所以
-//			                 //j还是等于10，不在打印hehe，所以一共就10给hehe
+//			if (i % j == 0)
+//			{
+//				break;
+//			}
+//		}
+//		if (j == i)
+//		{
+//			sum++;
+//			printf("%d ", i);
 //		}
 //	}
-//
-//
+//	printf("\nsum=%d\n", sum);
 //	return 0;
 //}
-//
-//
 //int main()
 //{
-//	int i = 0, j = 0;
-//	for (i = 0; i < 10; i++)
+//	int year;
+//	int sum = 0;
+//	for (year = 1000; year <= 2000; year++)
 //	{
-//		for (j = 0; j < 10; j++)
-//		{
-//			printf("hehe\n");//此时会打印100个呵呵
-//		}
+		//判断year是否为闰年
+		//1.能被4整除并且不能被100整除时闰年
+		//2.能被400整除是闰年
+		/*if (year % 4 == 0 && year % 100 != 0)
+		{
+			printf("%d ", year);
+			sum++;
+		}
+		else if (year % 400 == 0)
+		{
+			printf("%d ", year);
+			sum++;
+		}*/
+
+		/*if ((year % 4 == 0) && (year % 100 != 0) || (year % 400 == 0))
+		{
+			printf("%d ", year);
+			sum++;
+		}*/
+
+	/*}
+	printf("\nsum=%d\n", sum);
+	return 0;
+}*/
+
+// ！！！！究极nb的东西！！！
+//求两个数的最大公约数--辗转相除法
+//int main()
+//{
+//	int m = 24;
+//	int n = 18;
+//	int r;
+//	scanf_s("%d%d", &m, &n);
+//	while (m % n)//当m%n=0时，此时为“假”，直接跳出循环，最大公约数就为n
+//	{
+//		r = m % n;
+//		m = n;
+//		n = r;
 //	}
-//
-//
+//	printf("%d\n", n);
 //	return 0;
 //}
