@@ -3,180 +3,256 @@
 
 int main()
 {
-	char c;
-	int flag=1;
-	int count=0;
-	while((c=getchar())!='.')
+	int n=0;
+	int i=0;
+	int k=0;
+	int arr[100]={0,0,0,0,0,0,0,0,0,0,0};
+	int max=0;
+	scanf("%d",&n);
+	for(i=0;i<n;i++)
 	{
-		if(c!=' ')
+		scanf("%d",&k);
+		if(k==0)
+		arr[0]++;
+		else
 		{
-			count++;
-			flag=1;
+		while(k)
+		{			
+			arr[k%10]++;
+			k=k/10;
 		}
-		else if(c==' ')
-		{
-			if(count!=0) 
-			{printf("%d ",count);
-			flag=0;
-			count=0;
-			}
 		}
-		
 	}
-	if(count!=0)
-	printf("%d",count);
+	for(i=0;i<10;i++)
+	{
+		if(arr[i]>=arr[max])
+		max=i;
+	}
+	printf("%d:",arr[max]);
+	for(i=0;i<10;i++)
+	{
+		if(arr[i]==arr[max])
+		printf(" %d",i);
+	}
 	return 0;
-} 
+}
 
 //#include<stdio.h>
 //
 //int main()
 //{
-//	
-//	return 0;
-//}
-//#include<stdio.h>
-//#include<math.h>
-//int main()
-//{
-//	long long i,j,n,k,sum=0,b;
-//	scanf("%lld%lld",&n,&k);
-//	for(i=1;i<=n;i++)
-//	{
-//		 for(j=2;j<=k;j++)
-//		 {
-//		 	b=i*i;
-//		 }
-//		b%=114514;
-//		 sum+=b%114514;
-//	}
-//	sum%=114514;
-//	printf("%lld",sum);
-//	return 0;
-//}
-//#include<stdio.h>
-//
-//int main()
-//{
-//	char c;
-//	int flag=1;
-//	int count=0;
-//	while((c=getchar())!='.')
-//	{
-//		if(c!=' ')
-//		{
-//			count++;
-//			flag=1;
-//		}
-//		else if(c==' '&&flag)
-//		{
-//			printf("%d",count);
-//			flag=0;
-//			count=0;
-//		}
-//		if(count==0)
-//		printf(" ");
-//	}
-//	if(count!=0)
-//	printf("%d",count);
-//	return 0;
-//}
-////#include<stdio.h>
-////#include<math.h>
-////int main()
-////{
-////	int n,i,j;
-////	scanf("%d",&n);
-////	if(n==1)
-////	printf("None");
-////	for(i=2;i<=n;i++)
-////	{int flag=1;
-////		long long b=pow(2,i)-1;
-////		for(j=2;j<b;j++)
-////		{
-////			if(b%j==0)
-////			{
-////				flag=0;
-////				break;
-////			}
-////		}
-////		if(flag==1)
-////		{
-////			printf("%d\n",b);
-////		}
-////	}
-////	return 0;
-////}
-
-//#include<stdio.h>
-//
-//
-//int main()
-//{
-//	int a3,a2,a1,a0;
-//	scanf("%d%d%d%d",&a3,&a2,&a1,&a0);
-//	int a,b;
-//	scanf("%d%d",&a,&b);
-//	double left=a3*a*a*a+a2*a*a+a1*a+a0;
-//	double right=a3*b*b*b+a2*b*b+a1*b+a0;
-//	double mid=(left+right)/2;
-//	double mid1;
-//	while(left*right<0)
-//	{
-//		double left=a3*a*a*a+a2*a*a+a1*a+a0;
-//	double right=a3*b*b*b+a2*b*b+a1*b+a0;
-//		mid=(a+b)/2;
-//		mid1=a3*mid*mid*mid+a2*mid*mid+a1*mid+a0;
-//		if(mid1*left>0)
-//		{
-//			a=mid;
-//		}
-//		if(mid1*right>0)
-//		{
-//			b=mid;
-//		}
-//		if(mid1==0)
-//		printf("%.2lf",mid);
-//	}
-//	
-//	return 0;
-//}
-//#include<stdio.h>
-//int main()
-//{
-//	int n,i,j;
+//	int n;
+//	int k;
 //	scanf("%d",&n);
-//	for(i=1;i<=n;i++)
+//	int arr1[1000]={0};
+//	int arr2[1000]={0};
+//	int i,m;
+//	for(i=0;i<n;i++)
 //	{
-//		for(j=1;j<=i;j++)
+//		scanf("%d",&arr1[i]);
+//	}
+//	for(i=0;i<n;i++)
+//	{
+//		int j=0;
+//		int m=0;
+//		for(j=0;j<n;j++)
 //		{
-//			printf("%d*%d=%-4d",j,i,i*j);
+//			if(arr1[i]<=100-arr2[j])
+//			{
+//				arr2[j]=arr2[j]+arr1[i];
+//				printf("%d %d\n",arr1[i],j+1);
+//				if(j+1>m)
+//			m++;
+//			break;
+//			}
+//			
 //		}
+//	}
+//	printf("%d",m);
+//	return 0;
+//}
+//#include<stdio.h>
+//
+//int main()
+//{
+//	int n=0;
+//	int i=0;
+//	int k=0;
+//	int arr[1000]={0};
+//	int max=0;
+//	scanf("%d",&n);
+//	for(i=0;i<n;i++)
+//	{
+//		scanf("%d",&k);
+//		int d=0;
+//		while(k)
+//		{
+//			d=k%10;
+//			arr[d]++;
+//			k=k/10;
+//		}
+//	}
+//	for(i=0;i<10;i++)
+//	{
+//		if(arr[i]>arr[max])
+//		max=i;
+//	}
+//	printf("%d:",arr[max]);
+//	for(i=0;i<10;i++)
+//	{
+//		if(arr[i]==arr[max])
+//		printf(" %d",i);
+//	}
+//	return 0;
+//}
+
+//#include<stdio.h>
+//
+//int main()
+//{
+//	int arr[1000]={0};
+//	int n=0;
+//	int i=0;
+//	int max=0;
+//	int k;
+//	scanf("%d",&n);
+//	for(i=0;i<n;i++)
+//	{
+//		scanf("%d",&arr[i]);
+//	}
+//	for(i=0;i<n;i++)
+//	{
+//		if(arr[i]>arr[max])
+//		max=i;
+//	}
+//	int count=0;
+//	for(i=0;i<n;i++)
+//	{
+//		if(arr[i]==arr[max])
+//		count++;
+//	}
+//	printf("%d %d",arr[max],count);
+//	return 0;
+//}
+//#include<stdio.h>
+//
+//int main()
+//{
+//	int n=0;
+//	int i=0;
+//	int k=0;
+//	int arr[100]={0};
+//	int tmp;
+//	scanf("%d%d",&n,&k);
+//	for(i=0;i<n;i++)
+//	{
+//		scanf("%d",&arr[i]);
+//	}
+//	int j=0;
+//	for(i=0;i<k;i++)
+//	{
+//		j=0;
+//		for(j=0;j<n-1-i;j++)
+//		{
+//			if(arr[j+1]<arr[j])
+//			{
+//				tmp=arr[j];
+//				arr[j]=arr[j+1];
+//				arr[j+1]=tmp;
+//			}
+//		}
+//	}
+//	for(i=0;i<n-1;i++)
+//	{
+//		printf("%d ",arr[i]);
+//	}
+//	printf("%d",arr[n-1]);
+//	return 0;
+//}
+
+//#include<stdio.h>
+//
+//int main()
+//{
+//	int n=0;
+//	int i=0;
+//	int arr[100]={0};
+//	int tmp;
+//	scanf("%d",&n);
+//	for(i=0;i<n;i++)
+//	{
+//		scanf("%d",&arr[i]);
+//	}
+//	int j=0;
+//	for(i=0;i<n-1;i++)
+//	{
+//		j=0;
+//		for(j=0;j<n-i-1;j++)
+//		{
+//			if(arr[j+1]>arr[j])
+//			{
+//				tmp=arr[j];
+//				arr[j]=arr[j+1];
+//				arr[j+1]=tmp;
+//			}
+//		}
+//	}
+//	for(i=0;i<n-1;i++)
+//	{
+//		printf("%d ",arr[i]);
+//	}
+//	printf("%d",arr[n-1]);
+//	return 0;
+//}
+//#include<stdio.h>
+//
+//int main()
+//{
+//	int arr[10]={0};
+//	int i;
+//	for(i=0;i<6;i++)
+//	{
+//		scanf("%d",&arr[i]);
+//	}
+//    printf("%d",arr);
+//}
+
+//int max=0;
+//	int min=0;
+//	for(i=0;i<6;i++)
+//	{
+//		if(arr[i]>arr[max])
+//		{
+//			max=i;
+//		}
+//	}
+//	for(i=0;i<6;i++)
+//	{
+//		if(arr[i]<arr[min])
+//		{
+//			min=i;
+//		}
+//	}
+//	int sum=0;
+//	for(i=0;i<6;i++)
+//	{
+//		sum+=arr[i];
+//	}
+//	sum=sum-arr[max]-arr[min];
+////#include<stdio.h>
+////
+//int main()
+//{
+//	int arr[20]={1,1};
+//	int i;
+//	for(i=0;i<12;i++)
+//	{
+//		arr[i+2]=arr[i]+arr[i+1];
+//		printf("%6d",arr[i]);
+//		if((i+1)%3==0&&i!=0)
 //		printf("\n");
 //	}
+//	
+//	
 //	return 0;
 //}
-
-
-//#include<stdio.h>
-//  
-//int main()
-//{
-//	char c;
-//	int a=0,b=0,d=0,e=0;
-//	while((c=getchar())!='\n')
-//	{
-//		if(c>='A'&&c<='Z'||c>='a'&&C<='z')
-//		a++;
-//		else if(c>='0'&&C<='9')
-//		b++;
-//		else if(c==' ')
-//		d++;
-//		else
-//		e++;
-//		
-//	}
-//	printf("%d %d %d %d",a,b,d,e);
-//	return 0;
-//}
- 
