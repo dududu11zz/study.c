@@ -3,37 +3,45 @@
 
 int main()
 {
-	int n=0;
+	int arr[10][10]={0};
 	int i=0;
+	int j=0;
+	int n=0;
+	int c=0;
 	int k=0;
-	int arr[100]={0,0,0,0,0,0,0,0,0,0,0};
-	int max=0;
+
 	scanf("%d",&n);
+		int l=n-1;
+		while(k<=l)
+	{
+		for(i=k;i<=l;i++)
+	{
+		arr[k][i]=++c;
+	}
+	for(i=k+1;i<=l;i++)
+	{
+		arr[i][l]=++c;
+	}
+	for(i=l-1;i>=k;i--)
+	{
+		arr[l][i]=++c;
+	}
+	for(i=l-1;i>k;i--)
+	{
+		arr[i][k]=++c;
+	}
+	k++;l--;
+	}
+	
 	for(i=0;i<n;i++)
 	{
-		scanf("%d",&k);
-		if(k==0)
-		arr[0]++;
-		else
+		for(j=0;j<n;j++)
 		{
-		while(k)
-		{			
-			arr[k%10]++;
-			k=k/10;
+			printf("%3d",arr[i][j]);	
 		}
-		}
-	}
-	for(i=0;i<10;i++)
-	{
-		if(arr[i]>=arr[max])
-		max=i;
-	}
-	printf("%d:",arr[max]);
-	for(i=0;i<10;i++)
-	{
-		if(arr[i]==arr[max])
-		printf(" %d",i);
-	}
+		printf("\n");
+	} 
+	
 	return 0;
 }
 
@@ -41,67 +49,39 @@ int main()
 //
 //int main()
 //{
-//	int n;
-//	int k;
-//	scanf("%d",&n);
-//	int arr1[1000]={0};
-//	int arr2[1000]={0};
-//	int i,m;
+//	int m=0;
+//	int n=0;
+//	int i=0;
+//	int j=0;
+//	int i1=0;
+//	scanf("%d%d",&m,&n);
+//	int arr[7][7]={0};
+//	int arr1[7][7]={0};
 //	for(i=0;i<n;i++)
 //	{
-//		scanf("%d",&arr1[i]);
-//	}
-//	for(i=0;i<n;i++)
-//	{
-//		int j=0;
-//		int m=0;
 //		for(j=0;j<n;j++)
 //		{
-//			if(arr1[i]<=100-arr2[j])
-//			{
-//				arr2[j]=arr2[j]+arr1[i];
-//				printf("%d %d\n",arr1[i],j+1);
-//				if(j+1>m)
-//			m++;
-//			break;
-//			}
-//			
+//			scanf("%d",&arr[i][j]);
 //		}
 //	}
-//	printf("%d",m);
-//	return 0;
-//}
-//#include<stdio.h>
-//
-//int main()
-//{
-//	int n=0;
-//	int i=0;
-//	int k=0;
-//	int arr[1000]={0};
-//	int max=0;
-//	scanf("%d",&n);
 //	for(i=0;i<n;i++)
 //	{
-//		scanf("%d",&k);
-//		int d=0;
-//		while(k)
+//		for(j=0;j<n;j++)
 //		{
-//			d=k%10;
-//			arr[d]++;
-//			k=k/10;
+//			if(j+m<n)
+//			i1=j+m;
+//			else if(j+m>=n)
+//			i1=(j+m)%n;
+//			arr1[i][i1]=arr[i][j];
 //		}
 //	}
-//	for(i=0;i<10;i++)
+//	for(i=0;i<n;i++)
 //	{
-//		if(arr[i]>arr[max])
-//		max=i;
-//	}
-//	printf("%d:",arr[max]);
-//	for(i=0;i<10;i++)
-//	{
-//		if(arr[i]==arr[max])
-//		printf(" %d",i);
+//		for(j=0;j<n;j++)
+//		{
+//			printf("%d ",arr1[i][j]);
+//		}
+//		printf("\n");
 //	}
 //	return 0;
 //}
@@ -110,149 +90,191 @@ int main()
 //
 //int main()
 //{
-//	int arr[1000]={0};
 //	int n=0;
+//	int k=0;
 //	int i=0;
+//	int j=0;
 //	int max=0;
-//	int k;
-//	scanf("%d",&n);
-//	for(i=0;i<n;i++)
-//	{
-//		scanf("%d",&arr[i]);
-//	}
-//	for(i=0;i<n;i++)
-//	{
-//		if(arr[i]>arr[max])
-//		max=i;
-//	}
 //	int count=0;
-//	for(i=0;i<n;i++)
-//	{
-//		if(arr[i]==arr[max])
-//		count++;
-//	}
-//	printf("%d %d",arr[max],count);
-//	return 0;
-//}
-//#include<stdio.h>
-//
-//int main()
-//{
-//	int n=0;
-//	int i=0;
-//	int k=0;
-//	int arr[100]={0};
-//	int tmp;
-//	scanf("%d%d",&n,&k);
-//	for(i=0;i<n;i++)
-//	{
-//		scanf("%d",&arr[i]);
-//	}
-//	int j=0;
-//	for(i=0;i<k;i++)
-//	{
-//		j=0;
-//		for(j=0;j<n-1-i;j++)
-//		{
-//			if(arr[j+1]<arr[j])
-//			{
-//				tmp=arr[j];
-//				arr[j]=arr[j+1];
-//				arr[j+1]=tmp;
-//			}
-//		}
-//	}
-//	for(i=0;i<n-1;i++)
-//	{
-//		printf("%d ",arr[i]);
-//	}
-//	printf("%d",arr[n-1]);
-//	return 0;
-//}
-
-//#include<stdio.h>
-//
-//int main()
-//{
-//	int n=0;
-//	int i=0;
-//	int arr[100]={0};
-//	int tmp;
+//	int arr[1001]={0};
 //	scanf("%d",&n);
-//	for(i=0;i<n;i++)
+//	while(n)
 //	{
-//		scanf("%d",&arr[i]);
-//	}
-//	int j=0;
-//	for(i=0;i<n-1;i++)
-//	{
-//		j=0;
-//		for(j=0;j<n-i-1;j++)
+//		n--;
+//		scanf("%d",&k);
+//		for(i=0;i<k;i++)
 //		{
-//			if(arr[j+1]>arr[j])
-//			{
-//				tmp=arr[j];
-//				arr[j]=arr[j+1];
-//				arr[j+1]=tmp;
-//			}
+//			scanf("%d",&j);
+//			arr[j]++;
 //		}
+//		
 //	}
-//	for(i=0;i<n-1;i++)
+//	for(i=0;i<1001;i++)
 //	{
-//		printf("%d ",arr[i]);
-//	}
-//	printf("%d",arr[n-1]);
-//	return 0;
-//}
-//#include<stdio.h>
-//
-//int main()
-//{
-//	int arr[10]={0};
-//	int i;
-//	for(i=0;i<6;i++)
-//	{
-//		scanf("%d",&arr[i]);
-//	}
-//    printf("%d",arr);
-//}
-
-//int max=0;
-//	int min=0;
-//	for(i=0;i<6;i++)
-//	{
-//		if(arr[i]>arr[max])
+//		if(arr[i]>=arr[max])
 //		{
 //			max=i;
 //		}
 //	}
-//	for(i=0;i<6;i++)
+//	printf("%d %d",max,arr[max]);
+//		
+//	return 0;
+//}
+
+//#include<stdio.h>
+//
+//int main()
+//{
+//	int arr[11][11]={0};
+//	int i=0;
+//	int j=0;
+//	int n=0;
+//	int sum=0;
+//	int sum1=0;
+//	int sum2=0;
+//	int sum3=0;
+//	scanf("%d",&n);
+//	for(i=0;i<n;i++)
 //	{
-//		if(arr[i]<arr[min])
+//		for(j=0;j<n;j++)
 //		{
-//			min=i;
+//			scanf("%d",&arr[i][j]);
+//		}
+//	}
+//	for(i=0;i<n;i++)
+//	{
+//		for(j=0;j<n;j++)
+//		{
+//			sum+=arr[i][j];
+//		}
+//	}
+//	for(i=0;i<n;i++)
+//	{
+//		sum1+=arr[i][n-1-i];
+//	}
+//	for(i=1;i<n;i++)
+//	{
+//		sum2+=arr[n-1][i];
+//	}
+//	for(i=1;i<n;i++)
+//	{
+//		sum3+=arr[i][n-1];
+//	}
+//	printf("%d",sum-sum1-sum2-sum3+arr[n-1][n-1]);
+//	return 0;
+//}
+
+
+//#include<stdio.h>
+//
+//int main()
+//{
+//	int t=0;
+//	int arr[11][11]={0};
+//	int i=0;
+//	int j=0;
+//	int n=0;
+//	int flag=1;
+//	scanf("%d",&t);
+//	while(t)
+//	{
+//		t--;
+//		flag=1;
+//		scanf("%d",&n);
+//		for(i=0;i<n;i++)
+//		{
+//			for(j=0;j<n;j++)
+//			{
+//				scanf("%d",&arr[i][j]);
+//			}
+//		}
+//		for(i=1;i<n;i++)
+//		{
+//			for(j=0;j<i;j++)
+//			{
+//				if(arr[i][j]!=0)
+//				{
+//					flag=0;
+//				}
+//			}
+//		}
+//		if(flag==1)
+//		{
+//			printf("YES\n");
+//			
+//		}
+//		else
+//		printf("NO\n");
+//	}
+//	return 0;
+//}
+
+
+//#include<stdio.h>
+//
+//int main()
+//{
+//	int arr[7][7]={0};
+//	int n=0;
+//	int m=0;
+//	int i=0;
+//	int j=0;
+//	scanf("%d%d",&n,&m);
+//	for(i=0;i<n;i++)
+//	{
+//		for(j=0;j<m;j++)
+//		{
+//			scanf("%d",&arr[i][j]);
 //		}
 //	}
 //	int sum=0;
-//	for(i=0;i<6;i++)
+//	for(i=0;i<n;i++)
 //	{
-//		sum+=arr[i];
+//		int sum=0;
+//		for(j=0;j<m;j++)
+//		{
+//			sum+=arr[i][j];
+//		}
+//		printf("%d\n",sum);
 //	}
-//	sum=sum-arr[max]-arr[min];
-////#include<stdio.h>
-////
+//	return 0;
+//}
+
+//#include<stdio.h>
+//
 //int main()
 //{
-//	int arr[20]={1,1};
-//	int i;
-//	for(i=0;i<12;i++)
+//	int arr[21][21]={0};
+//	int n=0;
+//	int m=0;
+//	scanf("%d%d",&m,&n);
+//	int i=0;
+//	int j=0;
+//	int flag=0;
+//	for(i=0;i<m;i++)
 //	{
-//		arr[i+2]=arr[i]+arr[i+1];
-//		printf("%6d",arr[i]);
-//		if((i+1)%3==0&&i!=0)
-//		printf("\n");
+//		for(j=0;j<n;j++)
+//		{
+//			scanf("%d",&arr[i][j]);
+//		}
 //	}
-//	
-//	
+//	for(i=1;i<m-1;i++)
+//	{
+//		
+//		for(j=1;j<n-1;j++)
+//		{
+//			
+//			if(arr[i][j]>arr[i][j-1]&&arr[i][j]>arr[i][j+1]&&arr[i][j]>arr[i-1][j]&&arr[i][j]>arr[i+1][j])
+//		{
+//			printf("%d %d %d\n",arr[i][j],i+1,j+1);
+//			flag=1;
+//		}
+//		}
+//		
+//	}
+//	if(flag==0)
+//		{
+//			printf("None %d %d",m,n);
+//		}
 //	return 0;
 //}
